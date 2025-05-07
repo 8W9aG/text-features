@@ -4,18 +4,18 @@ set -e
 
 echo "Formatting..."
 echo "--- Ruff ---"
-ruff format textfeatures
+ruff format textfeats
 echo "--- isort ---"
-isort textfeatures
+isort textfeats
 
 echo "Checking..."
 echo "--- Flake8 ---"
-flake8 textfeatures
+flake8 textfeats
 echo "--- pylint ---"
-pylint textfeatures
+pylint textfeats
 echo "--- mypy ---"
-mypy textfeatures
+mypy textfeats
 echo "--- Ruff ---"
-ruff check textfeatures
+ruff check textfeats
 echo "--- pyright ---"
-pyright textfeatures
+pyright textfeats

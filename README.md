@@ -1,7 +1,7 @@
 # text-features
 
-<a href="https://pypi.org/project/textfeatures/">
-    <img alt="PyPi" src="https://img.shields.io/pypi/v/textfeatures">
+<a href="https://pypi.org/project/textfeats/">
+    <img alt="PyPi" src="https://img.shields.io/pypi/v/textfeats">
 </a>
 
 A library for processing text features in a dataframe.
@@ -15,11 +15,11 @@ Python 3.11.6:
 
 ## Raison D'être :thought_balloon:
 
-`text-features` transforms text into values that can be used by a model.
+`textfeats` transforms text into values that can be used by a model.
 
 ## Architecture :triangular_ruler:
 
-`text-features` is a functional library, meaning that each phase of feature extraction gets put through a different function until the final output. The features its computes are as follows:
+`textfeats` is a functional library, meaning that each phase of feature extraction gets put through a different function until the final output. The features its computes are as follows:
 
 1. Embeddings
 
@@ -27,7 +27,7 @@ Python 3.11.6:
 
 This is a python package hosted on pypi, so to install simply run the following command:
 
-`pip install textfeatures`
+`pip install textfeats`
 
 or install using this local repository:
 
@@ -46,7 +46,7 @@ import datetime
 
 import pandas as pd
 
-from textfeatures.process import process
+from textfeats.process import process
 
 df = ... # Your timeseries dataframe
 df = process(df, dimensions=16)

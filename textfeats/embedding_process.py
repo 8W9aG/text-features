@@ -20,7 +20,10 @@ def _provide_model() -> SentenceTransformer:
 def embedding_process(df: pd.DataFrame) -> pd.DataFrame:
     """Process the embeddings for any text columns."""
     model = _provide_model()
-    for column in tqdm.tqdm(df.select_dtypes(include="object").columns.tolist(), desc="Text embedding processing"):
+    for column in tqdm.tqdm(
+        df.select_dtypes(include="object").columns.tolist(),
+        desc="Text embedding processing",
+    ):
         texts = df[column].unique().tolist()
         embeddings = model.encode(texts)
         for count, text in enumerate(texts):
