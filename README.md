@@ -12,6 +12,11 @@ Python 3.11.6:
 
 - [pandas](https://pandas.pydata.org/)
 - [pyarrow](https://arrow.apache.org/docs/python/index.html)
+- [sentence_transformers](https://sbert.net/)
+- [tqdm](https://github.com/tqdm/tqdm)
+- [nltk](https://www.nltk.org/)
+- [textblob](https://textblob.readthedocs.io/en/dev/)
+- [numpy](https://numpy.org/)
 
 ## Raison D'être :thought_balloon:
 
@@ -21,7 +26,10 @@ Python 3.11.6:
 
 `textfeats` is a functional library, meaning that each phase of feature extraction gets put through a different function until the final output. The features its computes are as follows:
 
-1. Embeddings
+1. Embeddings - A mean of all the embeddings from the text values in the row.
+2. Stemmer - A count of the keywords containing the stem from the text values in the row.
+3. Sentiment - A measure of the positive / negative sentiment from the text values in the row.
+4. Objectivity - A measure of the objectivity / subjectivity from the text values in the row.
 
 ## Installation :inbox_tray:
 
@@ -49,7 +57,7 @@ import pandas as pd
 from textfeats.process import process
 
 df = ... # Your timeseries dataframe
-df = process(df, dimensions=16)
+df = process(df, True, {"injuries"})
 ```
 
 This will produce a dataframe that contains the new text related features.

@@ -1,5 +1,4 @@
 """Tests for the process function."""
-import datetime
 import os
 import unittest
 
@@ -19,10 +18,9 @@ class TestProcess(unittest.TestCase):
         df = pd.DataFrame(data={
             "feature1": ["Cool can I have some cheese?", "Where is all the cheese?"],
             "feature2": ["I like goats cheese.", "Cheddar cheese is quite nice."],
-        }, index=[
-            datetime.datetime(2022, 1, 1) + datetime.timedelta(x) for x in range(2)
-        ])
-        df = process(df)
-        # df.to_parquet("expected.parquet")
+        }, index=[x for x in range(2)])
+        df = process(df, True, {"cheese"})
+        print(df)
+        #df.to_parquet("expected.parquet")
         expected_features_df = pd.read_parquet(os.path.join(self.dir, "expected.parquet"))
         assert_frame_equal(df, expected_features_df)
