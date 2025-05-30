@@ -30,6 +30,7 @@ Python 3.11.6:
 2. Stemmer - A count of the keywords containing the stem from the text values in the row.
 3. Sentiment - A measure of the positive / negative sentiment from the text values in the row.
 4. Objectivity - A measure of the objectivity / subjectivity from the text values in the row.
+5. Count - The number of words from the text values in the row.
 
 ## Installation :inbox_tray:
 

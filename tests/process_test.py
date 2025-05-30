@@ -21,6 +21,6 @@ class TestProcess(unittest.TestCase):
         }, index=[x for x in range(2)])
         df = process(df, True, {"cheese"})
         print(df)
-        #df.to_parquet("expected.parquet")
+        # df.to_parquet("expected.parquet")
         expected_features_df = pd.read_parquet(os.path.join(self.dir, "expected.parquet"))
         assert_frame_equal(df, expected_features_df)
