@@ -45,6 +45,6 @@ def stemmer_process(
             written_columns.add(column)
 
     for column in written_columns:
-        df[column] = df_dict[column]
+        df.loc[:, column] = df_dict[column]
 
     return df[sorted(df.columns.values.tolist())].copy()

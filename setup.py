@@ -23,7 +23,7 @@ def install_requires() -> typing.List[str]:
 
 setup(
     name='textfeats',
-    version='0.1.3',
+    version='0.1.4',
     description='A library for processing text features in a dataframe.',
     long_description=long_description,
     long_description_content_type='text/markdown',
