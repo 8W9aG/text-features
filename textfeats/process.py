@@ -2,10 +2,10 @@
 
 import pandas as pd
 
+from .count_process import count_process
 from .embedding_process import embedding_process
 from .sentiment_process import sentiment_process
 from .stemmer_process import stemmer_process
-from .count_process import count_process
 
 
 def process(

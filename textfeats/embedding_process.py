@@ -1,6 +1,6 @@
 """Calculate embedding features."""
 
-# pylint: disable=global-statement
+# pylint: disable=global-statement,duplicate-code
 import hashlib
 import os
 

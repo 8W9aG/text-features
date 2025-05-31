@@ -4,8 +4,7 @@ import pandas as pd
 import tqdm
 from nltk.tokenize import word_tokenize  # type: ignore
 
-from .columns import (DELIMITER, COUNT_COLUMN,
-                      TEXT_FEATURES_COLUMN)
+from .columns import COUNT_COLUMN, DELIMITER, TEXT_FEATURES_COLUMN
 
 
 def count_process(df: pd.DataFrame, verbose: bool) -> pd.DataFrame:
@@ -22,7 +21,7 @@ def count_process(df: pd.DataFrame, verbose: bool) -> pd.DataFrame:
         texts = [x for x in row_dict.values() if isinstance(x, str)]
         if not texts:
             continue
-        word_count = sum([len(word_tokenize(x)) for x in texts])
+        word_count = sum(len(word_tokenize(x)) for x in texts)
         col = DELIMITER.join([TEXT_FEATURES_COLUMN, COUNT_COLUMN])
         if col not in df_dict:
             df_dict[col] = [None for _ in range(len(df))]
